@@ -1,42 +1,44 @@
-// script.js
+// Mock cart data
+let cart = [];
 
-// Update cart function
-function addToCart(itemName, itemPrice, quantity) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    quantity = parseInt(quantity); // Ensure quantity is an integer
-    const existingItemIndex = cart.findIndex(item => item.name === itemName);
-    
-    if (existingItemIndex !== -1) {
-        cart[existingItemIndex].quantity += quantity;
+// Add to Cart function
+function addToCart(name, price, quantity) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += parseInt(quantity);
     } else {
-        cart.push({ name: itemName, price: itemPrice, quantity: quantity });
+        cart.push({ name, price, quantity: parseInt(quantity) });
     }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${itemName} (${quantity}x) has been added to your cart!`);
-    updateCartCount(); // Update cart count in the header
+    updateCartUI();
 }
 
-// Filter products based on category
-function filterProducts() {
-    const selectedCategory = document.getElementById('category').value;
-    const shoes = document.querySelectorAll('.shoe');
-    
-    shoes.forEach(shoe => {
-        if (selectedCategory === 'all' || shoe.dataset.category === selectedCategory) {
-            shoe.style.display = 'block';
-        } else {
-            shoe.style.display = 'none';
-        }
+// Update Cart UI
+function updateCartUI() {
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    let total = 0;
+    cartItems.innerHTML = '';
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <p>${item.name} (x${item.quantity})</p>
+                <p>$${item.price.toFixed(2)}</p>
+                <p>$${itemTotal.toFixed(2)}</p>
+            </div>
+        `;
     });
+
+    cartCount.textContent = cart.length;
+    cartTotal.textContent = total.toFixed(2);
 }
 
-// Update cart count in the header
-function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-    document.getElementById('cart-count').textContent = cartCount;
-}
-
-// Initialize cart count on page load
-document.addEventListener("DOMContentLoaded", updateCartCount);
+// Initialize cart UI on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Update cart UI for both pages
+    updateCartUI();
+});
