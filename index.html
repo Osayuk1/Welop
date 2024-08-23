@@ -5,43 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoe Store</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Shop the latest shoes at the Shoe Store, offering running shoes, casual sneakers, and formal footwear.">
-    <meta name="keywords" content="shoes, running shoes, sneakers, formal shoes, buy shoes online">
+    <!-- Font Awesome for cart icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Welcome to the Shoe Store</h1>
         <nav>
             <ul>
-                <li><a href="#running-shoes">Running Shoes</a></li>
-                <li><a href="#casual-sneakers">Casual Sneakers</a></li>
-                <li><a href="#formal-shoes">Formal Shoes</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li> <!-- Cart Button -->
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="shoes" id="running-shoes">
+        <section class="shoes">
             <div class="shoe">
-                <img src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Running Shoe for men">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+1" alt="Shoe 1">
                 <h2>Running Shoe</h2>
                 <p>$80.00</p>
                 <button onclick="addToCart('Running Shoe', 80)">Buy Now</button>
             </div>
-        </section>
-
-        <section class="shoes" id="casual-sneakers">
             <div class="shoe">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9jMOZbg2JWNA5z0FVc_lCCZuwpexjJ-i92A&s" alt="White casual sneaker for men">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+2" alt="Shoe 2">
                 <h2>Casual Sneaker</h2>
                 <p>$60.00</p>
                 <button onclick="addToCart('Casual Sneaker', 60)">Buy Now</button>
             </div>
-        </section>
-
-        <section class="shoes" id="formal-shoes">
             <div class="shoe">
-                <img src="https://via.placeholder.com/300x300?text=Shoe+3" alt="Formal Shoe">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+3" alt="Shoe 3">
                 <h2>Formal Shoe</h2>
                 <p>$90.00</p>
                 <button onclick="addToCart('Formal Shoe', 90)">Buy Now</button>
