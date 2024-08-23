@@ -4,48 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoe Store</title>
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for cart icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Welcome to the Shoe Store</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li> <!-- Cart Button -->
+                <li><a href="#">Home</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="shoes">
+            <!-- Shoe Items -->
             <div class="shoe">
-                <img src="https://via.placeholder.com/300x300?text=Shoe+1" alt="Shoe 1">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+1" alt="Running Shoe">
                 <h2>Running Shoe</h2>
                 <p>$80.00</p>
                 <button onclick="addToCart('Running Shoe', 80)">Buy Now</button>
             </div>
             <div class="shoe">
-                <img src="https://via.placeholder.com/300x300?text=Shoe+2" alt="Shoe 2">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+2" alt="Casual Sneaker">
                 <h2>Casual Sneaker</h2>
                 <p>$60.00</p>
                 <button onclick="addToCart('Casual Sneaker', 60)">Buy Now</button>
             </div>
             <div class="shoe">
-                <img src="https://via.placeholder.com/300x300?text=Shoe+3" alt="Shoe 3">
+                <img src="https://via.placeholder.com/300x300?text=Shoe+3" alt="Formal Shoe">
                 <h2>Formal Shoe</h2>
                 <p>$90.00</p>
                 <button onclick="addToCart('Formal Shoe', 90)">Buy Now</button>
             </div>
+            <!-- Add more shoes here -->
         </section>
     </main>
-
     <footer>
         <p>© 2024 Shoe Store. All rights reserved.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
