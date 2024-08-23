@@ -1,124 +1,110 @@
-/* Global Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-}
+/* Basic styles (existing) */
 
+/* Header and Navigation */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #f8f9fa;
     padding: 1rem;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
-header h1 {
-    margin: 0;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
+    margin: 0 1rem;
 }
 
-nav ul li a {
-    color: white;
+header nav ul li a {
     text-decoration: none;
+    color: #007bff;
 }
 
-main {
-    padding: 2rem;
+#cart-count {
+    background-color: #dc3545;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
 }
 
 /* Filter Bar */
 .filter-bar {
-    margin-bottom: 2rem;
-    text-align: center;
+    margin: 1rem;
 }
 
-.filter-bar label {
-    margin-right: 1rem;
-}
-
-.filter-bar select {
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-/* Shoe Grid */
+/* Product Grid */
 .shoes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
+/* Shoe */
 .shoe {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.shoe:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .shoe img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 1rem;
 }
 
-button {
-    background-color: #333;
+.shoe button {
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    font-size: 1rem;
 }
 
-button:hover {
-    background-color: #555;
+.shoe button:hover {
+    background-color: #0056b3;
 }
 
-input[type="number"] {
-    width: 60px;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-}
-
-/* Footer */
-footer {
-    text-align: center;
+/* Cart Page */
+.cart {
     padding: 1rem;
-    background-color: #333;
-    color: white;
-    margin-top: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .shoes {
-        grid-template-columns: 1fr;
-    }
+.cart-total {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
 
-    header, footer {
-        padding: 1rem;
-    }
+.checkout-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+/* Checkout Page */
+.whatsapp-link {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.whatsapp-link:hover {
+    background-color: #128C7E;
 }
