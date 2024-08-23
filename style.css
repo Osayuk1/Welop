@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -27,6 +28,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Shoe Items Styles */
 .shoes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -67,6 +69,57 @@ button:hover {
     background-color: #218838;
 }
 
+/* Cart Page Styles */
+#cart-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 18px;
+}
+
+#cart-total {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#cart-total h3 {
+    font-size: 22px;
+}
+
+#cart-total button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#cart-total button:hover {
+    background-color: #218838;
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -74,6 +127,7 @@ footer {
     padding: 20px;
 }
 
+/* Mobile Styles */
 @media (max-width: 600px) {
     .shoes {
         grid-template-columns: 1fr;
