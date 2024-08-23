@@ -18,7 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
         cartContainer.appendChild(itemElement);
         total += item.price;
     });
+    
     totalPriceElement.textContent = total.toFixed(2);
+
+    // If cart is empty, display a message
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    }
 });
 
 // Function to remove items from cart
@@ -31,7 +37,22 @@ function removeItem(index) {
 
 // Function to handle checkout
 function checkout() {
-    alert("Thank you for your purchase!");
-    localStorage.removeItem('cart');  // Clear the cart
-    window.location.href = "index.html";  // Redirect to home after checkout
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before proceeding to checkout.");
+        return;
+    }
+
+    // Calculate total price for the cart
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    // Simulate the checkout process (for now, just an alert)
+    alert(`Thank you for your purchase! Your total is $${total.toFixed(2)}.`);
+
+    // Clear the cart after checkout
+    localStorage.removeItem('cart');
+
+    // Redirect to homepage or confirmation page (optional)
+    window.location.href = "index.html";
 }
