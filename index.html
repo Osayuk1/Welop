@@ -19,27 +19,39 @@
         </nav>
     </header>
     <main>
+        <!-- Filter Bar -->
+        <section class="filter-bar">
+            <label for="category">Filter by Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="running">Running</option>
+                <option value="casual">Casual</option>
+                <option value="formal">Formal</option>
+                <!-- Add more options as needed -->
+            </select>
+        </section>
+
+        <!-- Product Grid -->
         <section class="shoes">
-            <!-- Shoe Items -->
-            <div class="shoe">
+            <!-- Placeholder for 23 shoe items -->
+            <!-- Shoe items with quantity selection -->
+            <div class="shoe" data-category="running">
                 <img src="https://via.placeholder.com/300x300?text=Shoe+1" alt="Running Shoe">
                 <h2>Running Shoe</h2>
                 <p>$80.00</p>
-                <button onclick="addToCart('Running Shoe', 80)">Buy Now</button>
+                <input type="number" value="1" min="1" class="quantity" id="quantity-1">
+                <button onclick="addToCart('Running Shoe', 80, document.getElementById('quantity-1').value)">Buy Now</button>
             </div>
-            <div class="shoe">
+            <!-- Repeat similar blocks for 20 more placeholder shoes -->
+            <!-- Example: -->
+            <div class="shoe" data-category="casual">
                 <img src="https://via.placeholder.com/300x300?text=Shoe+2" alt="Casual Sneaker">
                 <h2>Casual Sneaker</h2>
                 <p>$60.00</p>
-                <button onclick="addToCart('Casual Sneaker', 60)">Buy Now</button>
+                <input type="number" value="1" min="1" class="quantity" id="quantity-2">
+                <button onclick="addToCart('Casual Sneaker', 60, document.getElementById('quantity-2').value)">Buy Now</button>
             </div>
-            <div class="shoe">
-                <img src="https://via.placeholder.com/300x300?text=Shoe+3" alt="Formal Shoe">
-                <h2>Formal Shoe</h2>
-                <p>$90.00</p>
-                <button onclick="addToCart('Formal Shoe', 90)">Buy Now</button>
-            </div>
-            <!-- Add more shoes here -->
+            <!-- Add more shoes here, up to 23 items -->
         </section>
     </main>
     <footer>
